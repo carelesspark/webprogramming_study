@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS2 BASIC</title>
+    <style>
+      /* 선택자 {
+            속성 : 값;
+            속성 : 값;
+        } */
+      /* 선택자 : 태그선택자, 아이디선택자, 클래스 선택자, 속성선택자, 구조선택자........... */
+
+      * {
+        color: blue;
+      }
+
+      /* h1 {
+        color: red;
+      } */
+
+      /* p {
+            color : chartreuse;
+        } */
+
+      /* 아이디 선택자는 한개의 효과만 적용 가능 */
+      #c1 {
+        color: brown;
+      }
+
+      #c3 {
+        font-size: 30px;
+      }
+
+      /* 클래스 선택자는 여러가지의 효과 적용 가능 */
+      .c2 {
+        color: aqua;
+      }
+
+      .c4 {
+        font-size: 30px;
+      }
+
+      /* 그룹선택자 */
+      /* h1, h2, h3 {
+        color: red;
+      } */
+
+      /* 부모, 자식, 자손, 형제 */
+
+      /* 자손(후손) */
+      /* body em{
+        color: aqua;
+      } */
+
+      /* 자식 */
+      h1 > em {
+        color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This headline is <em>very</em> important</h1>
+
+    <!-- <h1>html학습하기</h1>
+    <h2>css학습하기</h2>
+    <h3>js학습하기</h3> -->
+
+    <!-- <h1>웹프로그래밍</h1>
+    <p id="c3">html 학습하기</p>
+    <p id="c1">css 학습하기</p>
+    <p class="c2 c4">js 학습하기</p>
+    <a href="http://www.naver.com">NAVER</a> -->
+  </body>
+</html>

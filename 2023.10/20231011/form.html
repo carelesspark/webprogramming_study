@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>자기소개</legend>
+        <p>
+          <label>아이디 : </label>
+          <input
+            type="text"
+            name="id"
+            value=""
+            placeholder="아이디를 작성해주세요"
+            size="30"
+            required
+          />
+        </p>
+        <!-- readonly 속성은 작성하지 못하게 만듦 -->
+        <p>
+          <label>비밀번호 : </label>
+          <input
+            type="password"
+            name="pwd"
+            value=""
+            placeholder="비밀버호를 작성해주세요"
+            size="25"
+            required
+          />
+        </p>
+        <p>
+          <label>자기소개 : </label>
+          <textarea name="introduce" rows="10" cols="60" placeholder="자기소개란에 입력해주세요"></textarea>
+        </p>
+        <p>
+          <label>성별 : </label>
+          <input type="radio" name="gender" value="male" />남성
+          <input type="radio" name="gender" value="female" />여성
+        </p>
+        <p>
+          <label>좋아하는 과일 : </label>
+          <input type="checkbox" name="fruits" value="apple" checked />사과
+          <input type="checkbox" name="fruits" value="grape" />포도
+          <input type="checkbox" name="fruits" value="melon" checked />멜론
+          <input type="checkbox" name="fruits" value="watermelon" />수박
+          <input type="checkbox" name="fruits" value="orange" />오렌지
+        </p>
+        <p>
+          <label>직업 : </label>
+          <select name="job" multiple>
+            <option>--선택하세요--</option>
+            <option selected>대학생</option>
+            <option>교사</option>
+            <option>의사</option>
+            <option>태권도관장</option>
+            <option>화가</option>
+            <option>가수</option>
+            <option>기관사</option>
+            <option>운동선수</option>
+            <option>변호사</option>
+            <option>무직</option>
+          </select>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>기타 입력 사항</legend>
+        <p>
+          <label>이메일 : </label>
+          <input type="email" name="email" value="" />
+        </p>
+        <p>
+          <label>날짜 : </label>
+          <input type="date" /><br />
+          <input type="datetime" /><br />
+          <input type="datetime-local" /><br />
+        </p>
+        <p>
+          <label>숫자 : </label>
+          <input type="number" />
+        </p>
+      </fieldset>
+      <p>
+        <input type="file" multiple />
+      </p>
+      <p>
+        <input type="submit" value="회원가입" />
+        <input type="reset" value="취소" />
+      </p>
+      <p>
+        <input type="button" value="경고1" onclick="alert('경고')" />
+        <button onclick="alert('경고')">경고2</button>
+      </p>
+    </form>
+  </body>
+</html>

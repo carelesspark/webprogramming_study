@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3 BASIC</title>
+    <style>
+      /* 연결선택자 */
+      /* #container ul {
+            border : 1px solid blue;
+        }
+
+        #container > ul {
+            border : 1px solid blue;
+        } */
+
+      /* 인접선택자(형제) */
+      /* 부모의 속성은 자식에게 기본적으로 상속된다. */
+      /* h1 + ul {
+        가장 가까운 형제(바로 밑에 동생)한테만 적용
+        color: red;
+      } */
+
+      /* 나의 밑에 동생들 */
+      h1 ~ ul {
+        color : red;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="container">
+      <h1>얘약방법 및 요금</h1>
+      <ul>
+        <li>
+          예약방법
+          <ul>
+            <li>직접통화</li>
+            <li>문자남기기</li>
+          </ul>
+        </li>
+        <li>
+          요금
+          <ul>
+            <li>1인 : 1000</li>
+            <li>2인 : 2000</li>
+            <li>3인 : 3000</li>
+            <li>4인 : 4000</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          예약방법
+          <ul>
+            <li>직접통화</li>
+            <li>문자남기기</li>
+          </ul>
+        </li>
+        <li>
+          요금
+          <ul>
+            <li>1인 : 1000</li>
+            <li>2인 : 2000</li>
+            <li>3인 : 3000</li>
+            <li>4인 : 4000</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
