@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box8</title>
+    <style>
+      /* 요소를 움직이고자 할 때 사용하는 css 속성
+        position : static, relative, absolute, fixed -> 기준을 잡아주는 역할(시작점) */
+      /* top, left / bottom, right  -> 움직일 방향 */
+      /* position : absolute의 경우 가장 가까운 위치 지정 부모를 기준으로 절대적으로 움직이게 된다. 박스를 5개 설치하면 다 겹침 */
+
+      #wrap {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        top:150px;
+        left:400px;
+      }
+
+      #box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+      }
+
+      .box1 {
+        background: red;
+        top: 0px;
+        left: 0px;
+      }
+
+      .box2 {
+        /* 위에서 아래로 이동 */
+        background: rgb(0, 255, 64);
+        right: 0px;
+        top: 0px;
+      }
+
+      .box3 {
+        background: rgb(123, 23, 12);
+        bottom: 0px;
+        left: 0px;
+      }
+
+      .box4 {
+        background: rgb(50, 50, 50);
+        bottom: 0px;
+        right: 0px;
+      }
+
+      .box5 {
+        /* 아래에서 위로 이동 */
+        background: skyblue;
+        top: 125px;
+        left: 125px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="box" class="box1">박스1</div>
+      <div id="box" class="box2">박스2</div>
+      <div id="box" class="box3">박스3</div>
+      <div id="box" class="box4">박스4</div>
+      <div id="box" class="box5">박스5</div>
+    </div>
+  </body>
+</html>

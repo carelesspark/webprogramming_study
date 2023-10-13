@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box7</title>
+    <style>
+      .box1 {
+        background: yellow;
+        margin-right: 10px;
+        padding: 20px;
+        float: left;
+        /* float: left를 하면서 블록 -> 인라인 방식으로 변경 됌 */
+        /* 앞서 보았듯이 float을 사용하면 밑에 있는 네모가 옆으로 옮겨옴 */
+      }
+
+      .box2 {
+        background: orange;
+        margin-right: 10px;
+        padding: 20px;
+        float: left;
+      }
+
+      .box3 {
+        background: green;
+        margin-right: 10px;
+        padding: 20px;
+        float: left;
+      }
+
+      .box4 {
+        background: skyblue;
+        margin-right: 10px;
+        padding: 20px;
+        clear: both;
+        /* 보통이라면 float에 의해 박스가 같이 올라가질텐데, clear: both를 통해 속성을 clear해줌으로써 올라가지 않게 됨 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+    <div class="box3">박스3</div>
+    <div class="box4">박스4</div>
+  </body>
+</html>
