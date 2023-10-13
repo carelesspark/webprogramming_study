@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS7 BASIC</title>
+    <style>
+      p {
+        font-family: 궁서체, "Lucida Sans";
+
+        /* 절대 : pt, px, inch, cm
+        상대 : %, em */
+        /* font-size : 50px; */
+        /* font-size : 50%; */
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      /* 색상지정
+      1. 단색지정 ex. blue, red, yellow .....
+      2. 16진수 #000000~#ffffff
+      3. rgb함수, rgb(0,0,0) 0~255
+      4. rgba함수, rgba(0,0,0,0.5) 마지막 인수는 투명도를 정의(0.0~1.0) */
+
+      /* 외부 폰트 가져와서 사용하기 */
+      @import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap");
+      #font {
+        font-family: "Sunflower", sans-serif;
+        color: #20beda;
+      }
+
+      a:link {
+        /* 하이퍼링크 밑줄 제거 */
+        text-decoration: none;
+      }
+
+      a:hover {
+        /* 커서를 올리면 밑줄 생성 */
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <p>안녕하세요 글꼴이 적용되는지 확인하는 중 입니다.</p>
+    <p id="font">오늘도 좋은 하루 되세요:D</p>
+
+    <a href="http://www.naver.com">네이버</a>
+  </body>
+</html>

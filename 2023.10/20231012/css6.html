@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS6 BASIC</title>
+    <style>
+      /* 구조선택자 */
+
+      /* :nth-child(수식)  */
+      table tr:nth-child(1) {
+        /* table의 tr태그 중 첫 번째만 css 정의 */
+        background: orange;
+      }
+
+      table tr:nth-child(2n-1) {
+        /* table의 tr태그 중 홀수 번째만 css 정의 */
+        background: orange;
+      }
+
+      table tr:nth-child(2n) {
+        /* table의 tr태그 중 짝수 번째만 css 정의 */
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" width="100">
+      <tr>
+        <td>사과</td>
+      </tr>
+      <tr>
+        <td>포도</td>
+      </tr>
+      <tr>
+        <td>바나나</td>
+      </tr>
+      <tr>
+        <td>오렌지</td>
+      </tr>
+      <tr>
+        <td>키위</td>
+      </tr>
+      <tr>
+        <td>수박</td>
+      </tr>
+      <tr>
+        <td>멜론</td>
+      </tr>
+      <tr>
+        <td>자두</td>
+      </tr>
+      <tr>
+        <td>레몬</td>
+      </tr>
+    </table>
+  </body>
+</html>

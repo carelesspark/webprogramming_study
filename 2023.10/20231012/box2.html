@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box2</title>
+    <style>
+      /* 블록 <-> 인라인 block, inline, inline-block */
+
+      ul li {
+        background: red;
+        display: inline; /* ul, li는 블록 방식이므로 인라인 방식으로 바꾸고 싶을 경우 display : inline 사용 */
+        width: 100px;
+      }
+
+      p {
+        width: 150px;
+        height: 80px;
+      }
+
+      .p1 {
+        /* 굵은 선
+        border-style: solid;
+         선의 굵기 
+        border-width: 10px;
+         선의 색상 
+        border-color: aqua; */
+
+        /* 보통 속성은 한번에 적용 */
+        border: solid 3px aqua;
+        /* 선의 모서리 부분을 깎음 */
+        border-radius: 20px;
+      }
+
+      .p2 {
+        /* 점선 */
+        border-style: dotted;
+        /* 선의 굵기 */
+        border-width: 3px;
+        /* 선의 색상 */
+        border-color: darkblue;
+      }
+
+      .p3 {
+        /* 굵은 점선 */
+        border-style: dashed;
+        /* 선의 굵기 */
+        border-width: 3px;
+        /* 선의 색상 */
+        border-color: darkgrey;
+      }
+
+      .p4 {
+        border-style: solid;
+        border-width: 3px;
+        border-color: orange;
+        /* 해당 태그 그림자 적용 */
+        box-shadow: 2px 2px 5px 0px black;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="p1">회원가입</p>
+
+    <p class="p2">로그인</p>
+
+    <p class="p3">사이트맵</p>
+
+    <p class="p4">나가기</p>
+
+    <ul>
+      <li>여행지소개</li>
+      <li>회원가입</li>
+      <li>로그인</li>
+      <li>사이트맵</li>
+    </ul>
+  </body>
+</html>

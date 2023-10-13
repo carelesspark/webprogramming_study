@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box3</title>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        background: skyblue;
+      }
+
+      .box1 {
+        /* 첫 번째와 세 번째, 두 번째와 네 번째가 같은 margin을 공유한다. */
+        margin: 30px 50px 30px 50px;
+      }
+
+      .box2 {
+        /* 그래서 이렇게 간단하게 요약할 수 있다. */
+        margin: 30px 50px;
+      }
+
+      .box3 {
+        /* 만약 모두 같은 margin 값을 가지면 한번만 쓴다. */
+        margin: 50px;
+      }
+
+      .box4 {
+        /* 첫 번째는 위, 두 번째는 좌 우, 마지막은 아래 margin값을 나타냄 */
+        margin: 30px 5px 10px;
+      }
+
+      .box5 {
+        width: 800px;
+        height: 500px;
+        background: pink;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <!-- <div class="box5"></div> -->
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box1</title>
+    <style>
+      .s1 {
+        background: rgb(7, 200, 174);
+      }
+
+      .s2 {
+        background: rgb(215, 40, 40);
+      }
+
+      .n1 {
+        background: rgb(7, 200, 174);
+      }
+
+      .n2 {
+        background: rgb(215, 40, 40);
+      }
+
+      .box1 {
+        background: rgb(7, 200, 174);
+        width: 200px;
+        height: 100px;
+        display: none; /* 해당 태그를 사라지게 만드는데, 요소가 차지하고 있던 공간 또한 없앤다. */
+      }
+
+      .box2 {
+        background: rgb(215, 40, 40);
+        width: 50%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS와 박스모델
+    블록레벨(block) : p, div, ul, li -> 한행에 하나의 요소가 전체 영역을 사용한다.
+    인라인레벨(inline) : img, span, input -> 한행에서 내용의 크기 만큼만 사용한다. -->
+
+    <p class="s1">블록레벨</p>
+    <p class="s2">블록레벨</p>
+
+    <span class="n1">인라인레벨</span>
+    <span class="n2">인라인레벨</span>
+
+    <div class="box1">1번 div</div>
+    <div class="box2">2번 div</div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS8 BASIC</title>
+    <style>
+      .sq {
+        /* 글머리 기호의 모양을 네모로! */
+        list-style-type: square;
+      }
+
+      .nobullet {
+        /* 글머리 기호의 모양을 사라지게 한다. 단, 공간은 그대로 적용 */
+        list-style-type: none;
+      }
+
+      .book {
+        /* 글머리 기호가 본래 아라비아 숫자지만, 로마 숫자로 변형 */
+        list-style-type: upper-roman;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="sq">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+    </ul>
+
+    <ul class="nobullet">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+    </ul>
+    <ol class="book">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+    </ol>
+  </body>
+</html>
