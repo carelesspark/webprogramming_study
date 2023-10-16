@@ -1,0 +1,291 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  background-image: url(../images/background.jpg);
+  height: 880px;
+  background-size: cover;
+  padding: 20px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between; /* 양 끝 단에 붙게끔 만드는 코드 */
+}
+
+.logo {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
+  list-style-type: none;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search_box {
+  width: 430px;
+  height: 470px;
+  display: inline-block;
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  top: 30px;
+  left: 50px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px 0 rgb(214, 214, 214);
+}
+
+table {
+  width: 100%;
+}
+
+.search_title {
+  padding: 10px 0px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(75, 75, 75);
+}
+
+.search_sub_title {
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.search_input {
+  height: 45px;
+  width: 100%;
+  color: rgb(100, 98, 98);
+  font-size: 15px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+.search_button {
+  display: grid;
+  justify-content: end;
+}
+
+.search_button button {
+  width: 65px;
+  height: 45px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+main {
+  margin: 30px 80px;
+}
+
+section {
+  margin: 30px 0;
+}
+
+.sec_title {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(68, 66, 66);
+  margin-bottom: 20px;
+}
+
+.sec_title2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(68, 66, 66);
+}
+
+.card_img1 {
+  border-radius: 6px;
+  background-image: url(../images/card1.jpg);
+  height: 70px;
+  background-size: 100% 100%;
+}
+
+.card_img2 {
+  border-radius: 6px;
+  background-image: url(../images/card2.jpg);
+  height: 70px;
+  background-size: 100% 100%;
+}
+
+.card_img3 {
+  border-radius: 6px;
+  background-image: url(../images/card3.jpg);
+  height: 70px;
+  background-size: 100% 100%;
+}
+
+.card_img4 {
+  border-radius: 6px;
+  background-image: url(../images/card4.jpg);
+  height: 70px;
+  background-size: 100% 100%;
+}
+
+.card_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.card_content {
+  display: grid;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 0 3px 0 rgb(172, 170, 170);
+}
+
+.ad1 {
+  background-image: url(../images/ad1.jpg);
+  margin: 40px 0px;
+  height: 350px;
+  background-size: 100% 100%;
+  border-radius: 10px;
+}
+
+.ad2 {
+  margin: 20px 0px;
+  background-image: url(../images/ad2.png);
+  height: 300px;
+  background-size: 100% 100%;
+}
+
+.choo_img1 {
+  background-image: url(../images/choo1.png);
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.choo_img2 {
+  background-image: url(../images/choo2.png);
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.choo_img3 {
+  background-image: url(../images/choo3.png);
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.choo_img4 {
+  background-image: url(../images/choo4.png);
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.choo_img5 {
+  background-image: url(../images/choo5.png);
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.choo_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 7px;
+}
+
+.home_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.home_img1 {
+  background-image: url(../images/home1.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img2 {
+  background-image: url(../images/home2.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img3 {
+  background-image: url(../images/home3.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img4 {
+  background-image: url(../images/home4.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img5 {
+  background-image: url(../images/home5.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img6 {
+  background-image: url(../images/home6.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img7 {
+  background-image: url(../images/home7.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.home_img8 {
+  background-image: url(../images/home8.png);
+  height: 180px;
+  background-size: 100% 100%;
+}
+
+.info1 {
+  margin: 5px 0px;
+  font-size: 13px;
+  color: gray;
+}
+
+.info2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(61, 60, 60);
+}
+
+.star {
+  font-size: 12px;
+}
+
+.count,
+.type {
+  font-size: 12px;
+}
+

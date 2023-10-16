@@ -1,0 +1,417 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0px 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 1172px;
+  height: 80px;
+}
+
+.header_logo {
+  width: 240px;
+}
+
+.logo {
+  color: #ff4848;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: inherit;
+  text-decoration-line: none;
+  width: 140px;
+}
+
+.header_search {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 411px;
+  height: 48px;
+  padding: 0px 24px;
+}
+
+.search_where {
+  width: 98px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: none;
+  cursor: pointer;
+}
+
+.search_when {
+  width: 120px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+}
+
+.search_people {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 146px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: none;
+  cursor: pointer;
+}
+
+.where_font {
+  font-weight: bold;
+  border-right-style: inset;
+  border-right-color: #ccc;
+}
+
+.when_font {
+  font-weight: bold;
+  border-right-style: inset;
+  border-right-color: #ccc;
+}
+
+.people_font {
+  color: gray;
+  margin: 13px;
+}
+
+.header_tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 355px;
+  height: 80px;
+}
+
+.tools_start {
+  width: 231px;
+  height: 42px;
+}
+
+.tools_language {
+  width: 46px;
+}
+
+.button_search {
+  margin: 13px;
+  border-radius: 100%;
+  border: 1px solid black;
+  width: 32px;
+  height: 32px;
+  margin: 6px 5px;
+  padding: 10px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.button_start {
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  border-style: none;
+  width: 231px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.button_start:hover {
+  background-color: #f9f6f6;
+}
+
+.button_language {
+  width: 46px;
+  height: 42px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  border-style: none;
+  cursor: pointer;
+  padding-left: 15px;
+}
+
+.button_language:hover {
+  background-color: #f9f6f6;
+}
+
+.button_login {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  width: 86px;
+  height: 48px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.button_login:hover {
+  box-shadow: 0 2px 2px 0 rgb(214, 214, 214);
+}
+
+.login_menu {
+  width: 16px;
+  height: 16px;
+  margin: 15px 13px;
+}
+
+.login_user {
+  width: 32px;
+  height: 32px;
+  margin: 7px 0px;
+  color: #5e5d5d;
+}
+
+.main_hr {
+  border: 1px solid #e7e7e7;
+}
+
+.main_content_left {
+  font-weight: bold;
+  font-size: 15px;
+  width: 200px;
+  height: 28px;
+  margin: 4px 0px 0px;
+}
+
+.main_content_left > span > a:link {
+  color: black;
+}
+
+.main_content_left > span > a:visited {
+  color: black;
+}
+
+.main_content_left > span > a:active {
+  color: black;
+}
+
+.main_content {
+  width: 1012px;
+  height: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-gap: 600px;
+  margin-top: 10px;
+}
+
+.button_share {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 86px;
+  height: 34px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.button_share:hover {
+  background-color: #f9f6f6;
+}
+
+.button_store {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 66px;
+  height: 34px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.button_store:hover {
+  background-color: #f9f6f6;
+}
+
+.share_font {
+  text-decoration: underline;
+}
+
+.store_font {
+  text-decoration: underline;
+}
+
+.main_content_right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200px;
+}
+
+.pic1 {
+  background-image: url(../images/seoul1.jpg);
+  width: 506px;
+  height: 405px;
+  background-size: 100% 100%;
+  grid-area: pic1;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.pic2 {
+  background-image: url(../images/seoul2.jpg);
+  width: 245px;
+  height: 202.5px;
+  background-size: 100% 100%;
+  grid-area: pic2;
+}
+
+.pic3 {
+  background-image: url(../images/seoul3.jpg);
+  width: 245px;
+  height: 202.5px;
+  background-size: 100% 100%;
+  grid-area: pic3;
+  border-top-right-radius: 10px;
+}
+
+.pic4 {
+  background-image: url(../images/seoul4.jpg);
+  width: 245px;
+  height: 202.5px;
+  background-size: 100% 100%;
+  grid-area: pic4;
+}
+
+.pic5 {
+  background-image: url(../images/seoul5.jpg);
+  width: 245px;
+  height: 202.5px;
+  background-size: 100% 100%;
+  grid-area: pic5;
+  border-bottom-right-radius: 10px;
+}
+
+.main_pic {
+  width: 1172px;
+  height: 429px;
+  padding: 0px 160px;
+}
+
+.main_pic_div {
+  width: 1012px;
+  height: 429px;
+  padding: 24px 0px 0px;
+  display: grid;
+  grid-template-areas:
+    "pic1 pic1 pic2 pic3"
+    "pic1 pic1 pic4 pic5";
+  gap: 10px;
+}
+
+.main_title {
+  padding: 0px 160px;
+  width: 1172px;
+  height: 86px;
+}
+
+.main_title_info2 {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+
+.div_logo {
+  width: 40px;
+}
+
+.review_logo {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  width: 590px;
+  margin-bottom: 20px;
+}
+
+.main_review {
+  width: 1172px;
+  padding: 0px 160px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review_font {
+  font-size: 13px;
+  color: #6c6868;
+}
+
+.main_review2 {
+  width: 590px;
+  height: 262px;
+  padding: 32px 0px 48px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review2_more {
+  margin-top: 20px;
+}
+
+.more_font {
+  width: 70px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.more_font2 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.button_more {
+  width: 70px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.main_title_info1 {
+  width: 590px;
+  height: 112px;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.main_review_title {
+  width: 590px;
+  height: 112px;
+  padding: 32px 0px 24px;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.review_title_and_pic {
+  width: 590px;
+  height: 56px;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+
+.review_title_and_info {
+  width: 518px;
+  height: 56px;
+}
+
+.main_review_evaluation {
+  width: 590px;
+  height: 244px;
+  padding: 32px 0px;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.main_review2_info {
+  width: 590px;
+  height: 144px;
+}
