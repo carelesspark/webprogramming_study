@@ -6,13 +6,21 @@
 
 header {
   padding: 0px 160px;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 1172px;
   height: 80px;
 }
 
+main{
+  padding: 0px 160px;
+}
+
 .header_logo {
+  position: absolute;
+  top: 20px;
+  left: 150px;
   width: 240px;
 }
 
@@ -26,12 +34,16 @@ header {
 }
 
 .header_search {
+  position: absolute;
+  top: 20px;
+  left: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 411px;
   height: 48px;
   padding: 0px 24px;
 }
+
 
 .search_where {
   width: 98px;
@@ -85,6 +97,9 @@ header {
 }
 
 .header_tools {
+  position: absolute;
+  top: 20px;
+  left: 900px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 355px;
@@ -98,6 +113,10 @@ header {
 
 .tools_language {
   width: 46px;
+}
+
+.tools_login {
+  margin-left: 10px;
 }
 
 .button_search {
@@ -160,7 +179,7 @@ header {
 .login_menu {
   width: 16px;
   height: 16px;
-  margin: 15px 13px;
+  margin: 15px 15px;
 }
 
 .login_user {
@@ -200,7 +219,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  grid-gap: 600px;
+  grid-gap: 750px;
   margin-top: 10px;
 }
 
@@ -252,8 +271,8 @@ header {
 
 .pic1 {
   background-image: url(../images/seoul1.jpg);
-  width: 506px;
-  height: 405px;
+  width: 606px;
+  height: 415px;
   background-size: 100% 100%;
   grid-area: pic1;
   border-top-left-radius: 10px;
@@ -297,7 +316,6 @@ header {
 .main_pic {
   width: 1172px;
   height: 429px;
-  padding: 0px 160px;
 }
 
 .main_pic_div {
@@ -312,7 +330,7 @@ header {
 }
 
 .main_title {
-  padding: 0px 160px;
+  padding: 20px 0px;
   width: 1172px;
   height: 86px;
 }
@@ -337,7 +355,6 @@ header {
 
 .main_review {
   width: 1172px;
-  padding: 0px 160px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -414,4 +431,70 @@ header {
 .main_review2_info {
   width: 590px;
   height: 144px;
+}
+
+.check_menu {
+  display: grid;
+  grid-template-areas: 
+  "checkin checkin checkout checkout"
+  "count count count count";
+}
+
+.checkin {
+  grid-area: checkin;
+  border: 1px solid #5e5d5d;
+  border-top-left-radius: 10px;
+}
+
+.checkout {
+  grid-area: checkout;
+  border: 1px solid #5e5d5d;
+  border-top-right-radius: 10px;
+}
+
+.people_count {
+  grid-area: count;
+  border: 1px solid #5e5d5d;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.main_review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.review_right_menu {
+  margin-top: 20px;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 336px;
+  height: 328px;
+  box-shadow: 0 2px 2px 0 rgb(214, 214, 214);
+}
+
+.main_review_right{
+  margin: 0px 0px 0px 83px;
+}
+
+.right_title{
+  font-size: 23px;
+}
+
+.star1 {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.review2 {
+  color: #5e5d5d;
+  font-size: 15px;
+}
+
+.book_button{
+  border: none;
+  background-color: #ff4848;
+  color: white;
+  border-radius: 20px;
 }

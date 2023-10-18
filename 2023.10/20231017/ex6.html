@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice js6</title>
+    <script>
+      // // 조건문
+      // let age = 10;
+      // if(age >= 20){
+      //     document.write("성인 입니다.");
+      // } else {
+      //     document.write("성인이 아닙니다.");
+      // }
+
+      // let time = new Date().getHours();
+      // let msg;
+
+      // if(time < 12) {
+      //     msg = "아침";
+      // } else if(time < 18) {
+      //     msg = "점심";
+      // } else {
+      //     msg = "저녁";
+      // }
+
+      // document.write(msg);
+
+      // let choice = prompt("숫자입력", "0");
+      // choice = parseInt(choice);
+      // switch(choice){
+      //     case 1: document.write(choice);
+      //     break;
+      //     case 2: document.write(choice);
+      //     break;
+      //     case 3: document.write(choice);
+      //     break;
+      //     default: document.write("잘못 선택");
+      // }
+
+      // 반복문
+      //   let i = 1;
+      //   while(i <= 10){
+      //     document.write(i + "Hello" + "<br>");
+      //     i++;
+      //   }
+
+      //   for (let i = 0; i <= 10; i++) {
+      //     document.write(i + "Hello" + "<br>");
+      //   }
+
+      //   for(let i = 1; i <= 6; i++){
+      //     document.write("<h" + i + ">제목입니다.</h1>")
+      //   }
+
+      // for(let i = 1; i <= 6; i++){
+      //     document.write(`<h${i}> 제목입니다. </h${i}>`);
+      //   }
+
+      // 10x10 테이블 만들기
+
+      var cnt = 1;
+      document.write("<table border='1'>");
+      for (let i = 1; i <= 10; i++) {
+        document.write("<tr>");
+        for (let j = 1; j <= 10; j++) {
+          document.write(`<td>${cnt}</td>`);
+          cnt++;
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </head>
+  <body></body>
+</html>
