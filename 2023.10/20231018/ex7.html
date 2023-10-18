@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice js7</title>
+    <script>
+      // 자바스크립트의 함수는 실제로는 전역객체의 함수 입니다.(window 객체 소속)
+      // 1-1 자바스크립트 함수는 그 자체로 객체입니다.
+      // 1-2 자바스크립트는 동적언어라 객체에 나중에 속성을 추가하는 것이 가능합니다.
+      // 함수의 선언형식 6가지
+      // // 1. 명명 함수 선언
+      // function hello() {
+      //   /*  실행문 */
+      // }
+
+      // // 2. 익명 함수 선언
+      // var hello = function () {
+      //   /*  실행문 */
+      // };
+
+      // // 3. 명명 함수 선언
+      // var hello = function hello() {
+      //   /*  실행문 */
+      // };
+
+      // // 4. 즉시 실행 함수 선언
+      // var hello = (function () {
+      //   /*  실행문 */
+      // })();
+
+      // // 5. 생성자 함수 선언
+      // var hello = new Function("a", "b", "return a + b");
+
+      // // 6. 화살표 함수
+      // var hello = () => {
+      //   /*  실행문 */
+      // };
+
+      // // 기본적인 함수 형태
+      // function add(매개변수1, ...){
+      //     실행문장;
+      //     (return 값;) // 생략 가능
+      // }
+
+      //   function add() {
+      //     document.write(10 + 20);
+      //   }
+
+      //   add(); // 함수 호출
+
+      //   function add2(x, y) {
+      //     document.write(x + y);
+      //   }
+
+      //   add2(1, 2);
+
+      // function add3(x, y){
+      //     let sum = x + y;
+      //     return sum;
+      // }
+
+      // let result = add3(3, 4);
+      // document.write(result);
+
+      // var, let, const의 스코프(scope)
+
+      // 1. var: 함수 레벨 스코프
+      // var 타입은 어디서든지 값이 유효함(함수 전체 레벨)
+      //   function func() {
+      //     if (true) {
+      //       var a = 5;
+      //       console.log(a);
+      //     }
+
+      //     console.log(a);
+      //   }
+
+      //   func();
+
+      // 2. let, const : 블록 레벨 스코프
+      // let, const 타입은 해당 타입의 변수가 선언된 블록 내에서만 값이 유효함(블록 내 레벨)
+      //   function func() {
+      //     if (true) {
+      //       /* let */ const a = 5;
+      //       console.log(a);
+      //     }
+
+      //     console.log(a); // 오류 발생
+      //   }
+
+      //   func();
+
+      // 호이스팅(Hoisting)
+      // 1. var: 호이스팅이 된다.
+
+      //   console.log(a);
+      //   var a = 5; // undefined 발생, 변수에 대한 인식은 되지만 저장된 값은 인식을 못한다.
+
+      //   foo();
+      //   function foo() {
+      //     console.log("foo");
+      //   } // 함수의 호이스팅, 정상적으로 콘솔 값이 출력 됨
+
+      // let, const : 호이스팅 불가
+
+      //   let a = 5;
+      //   console.log(a);
+
+      //   foo();
+
+      //   var foo = function () {
+      //     console.log("foo");
+      //   }; // 오류 발생
+
+      // 익명 함수
+      // var hello = function(){
+      //     console.log("익명함수 호출");
+      // }
+
+      // hello();
+
+      // 즉시 실행 함수(일회용 함수)
+      // var hello = (function(){
+      //     console.log("즉시 실행 함수");
+      // })();
+
+      // var add = (function(x, y){
+      //     console.log(x + y);
+      // })(3, 5);
+
+      // 화살표 함수
+      //   const f1 = (x, y, z) => x + y + z;
+      //   let result = f1(1, 2, 3);
+      //   document.write(result);
+
+      //   let sum = function(a, b){
+      //     return a + b;
+      //   }
+
+      //   let sum = (a, b) => a + b;
+      //   let val = () => alert("인자없음");
+
+      //   let inc1 = a => a++;
+      //   let inc2 = a => {
+      //     let result = a++;
+      //     return result;
+      //   }
+
+      // 자바스크립트 함수와 함수의 call(), apply(), bind()
+
+      //   function add(a, b) {
+      //     return a + b;
+      //   }
+
+      //   console.log(add(3, 5));
+      //   console.log(window.add(3, 5));
+
+      // 1-1 자바스크립트 함수는 그 자체로 객체이다.
+      //   function bar() {
+      //     console.log("bar");
+      //   }
+      //   bar.a = 5;
+      //   console.log(bar.a);
+
+      // 함수 내에서 사용되는 this 키워드
+
+      //   function plus(y){
+      //     console.log(this.x + y); // window-> this
+      //   }
+
+      //    var x = 5; // 호이스팅
+
+      //    plus(5);
+
+      //   var x = 20;
+
+      //   var foo = {
+      //     // window.foo
+      //     x: 10,
+      //     add: function (y) {
+      //       console.log(this.x + y);
+      //     },
+      //   };
+
+      //   foo.add(5); // 15
+
+      //   var add = foo.add;
+      //   add(5); // 25, 위의 foo.add(5)를 실행했을 때의 this.x는 foo 내의 x인 10이지만, 이 식의 경우 foo.add를 외부로 가져오게 될 경우 this.x가
+      // foo내의 x:10이 아닌 window.x인 x = 20이 this.x로 들어가기 때문에 25가 들어가게 됨
+
+      // this가 가지는 의미(this가 가리키는 현재 객체가 무엇인가?)
+
+      //   console.log(this === window); // true
+      //   const hello = {
+      //     hi: function () {
+      //       console.log(this === window); // false
+      //       console.log(this);
+      //     },
+      //   };
+
+      //   hello.hi();
+
+      function showDialog(){
+        alert("안녕하세요");
+      }
+
+      function greeting(name, position){
+        alert(name + " " + position + "님 환영합니다.");
+      }
+
+      let greeting2 = function(name, position){
+        alert(name + " " + position + "님 환영합니다.");
+      }
+
+      let greeting3 = (name, position) => {
+        alert(name + " " + position + "님 환영합니다.");
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showDialog()">대화상자오픈</button>
+    <button onclick="greeting('박종혁', '학생')">인사</button>
+    <button onclick="greeting2('박종혁', '학생')">인사2(무명함수 사용)</button>
+    <button onclick="greeting2('박종혁', '학생')">인사3(화살표 함수 사용)</button>
+  </body>
+</html>
