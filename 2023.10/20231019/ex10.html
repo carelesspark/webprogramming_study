@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice js10</title>
+    <script>
+      // 사용자 정의 객체
+      // 속성(변수), 기능(함수, 메소드)
+      // 객체 선언 3가지 형식
+      // 생성 후 참조한다.
+      // 객체벼수명.속성
+      // 객체변수명.메소드
+
+      // 1. Object() 객체 생성자 함수를 사용하기
+      //   var person1 = new Object();
+      //   person1.name = "hong";
+      //   person1.age = 20;
+      //   person1.sayHello = function () {
+      //     document.write(this.name + " : Hello:)");
+      //   };
+
+      //   console.log(person1);
+      //   document.write(person1.name + "<br>");
+      //   person1.sayHello();
+
+      // 2. 객체 리터럴 이용 방식
+      //   var foo = {key:value, .....};
+
+      //   var foo = {
+      //     name: 'foo',
+      //     age: 30,
+      //     gender: 'male',
+      //     sayHello: function(){
+      //         document.write(this.name + " : hello:)");
+      //     }
+      //   };
+
+      //   document.write(foo.name + "<br>");
+      //   foo.sayHello();
+
+      // 3. 생성자 함수 이용
+      //   function Person(매개변수, ....){
+
+      //   }
+      //   var Person = function(매개변수,....){
+
+      //   }
+
+      //   var Person = function (name, age) {
+      //     this.name = name;
+      //     this.age = age;
+      //     this.sayHello = function () {
+      //       document.write(this.name + " : " + this.age);
+      //     };
+      //   };
+
+      //   var me = new Person("park", 22);
+      //   document.write(me.name + "<br>");
+      //   me.sayHello();
+
+      let arr = [1, 2, 3, 4, 5];
+
+    //   for (let i in arr) { // for문을 통해 arr 내에 저장되어 있는 인덱스값 출력
+    //     document.write(arr[i] + "<br>");
+    //   }
+
+      arr.forEach(function (value, index) { // arr 내에 저장되어 있는 value, index값 출력
+        document.write("value : " + value + ", index : " + index + "<br>");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

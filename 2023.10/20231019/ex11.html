@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice js11</title>
+    <script>
+      // 화살표함수와 일반함수의 차이점
+      //   let sum = function (a, b) {
+      //     return a + b;
+      //   };
+
+      //   let sum2 = (a, b) => a + b;
+
+      // 화살표 함수는 this를 가지지 않는다.
+      // 화살표 함수는 arguments가 없다 -> 인자를 배열처럼 받을 수 없다.
+      // 화살표 함수는 new연산자와 함께 사용하지 않는 것이 좋다.
+
+      //   console.log(this === window) // true
+
+      //   const hello = {
+      //     hi: function(){
+      //         console.log(this === window); // false
+      //         console.log(this); // 객체 hi 출력
+      //     }
+      //   };
+      //   hello.hi();
+
+      // function createObject() {
+      //   console.log("Inside `createObject` : ", this.foo, this); // this.foo = undefined, this = window가 콘솔에 출력 됨
+      //   return {
+      //     foo: 42,
+      //     //   bar: function () {
+      //     //     console.log("Inside `bar` : ", this.foo, this);
+      //     //   },
+      //     bar: () => console.log("Inside `bar` : ", this.foo, this),
+      //   };
+      // }
+
+      // createObject();
+
+      // // call() -> 객체 자체를 인자 값으로 넘길 수 있음(함수 객체를 사용할 때는 ()제거해야됌)
+      // createObject.call({ foo: 21 }); // 결과로 this.foo = 21, this = foo가 콘솔에 출력 됨
+
+      // createObject.call({ foo: 21 }).bar(); // this.foo = 42, this = bar가 콘솔에 출력 됨
+      // // 그러나 bar객체를 화살표 함수로 표현했을 때의 출력 값을 보면 this.foo = 21, this = foo가 콘솔에 출력되는 것을 확인할 수 있음
+      // // 이는 화살표함수의 경우 this를 가지지 않기 때문에 위의 foo객체를 참조하게 됨
+
+      // 함수 객체
+      // call(), apply(), bind()
+
+      // var KoGreeting = {
+      //   greeting: "안녕",
+      //   name: "홍길동",
+      //   sayHello: function () {
+      //     return this.greeting + ", " + this.name;
+      //   },
+      // };
+
+      // var enGreeting = {
+      //   greeting: "hello",
+      //   name: "HongKilDong",
+      // };
+
+      // document.write(KoGreeting.sayHello() + "<br>"); // 페이지에 "안녕, 홍길동" 출력
+
+      // // call()을 호출하는 함수가 인자로 주어진 객체에 딸려 있는 객체 처럼 동작하게 된다.
+      // document.write(KoGreeting.sayHello.call(enGreeting)); // 페이지에 먼저 "안녕, 홍길동"출력하고
+      // // call(enGreeting)을 통해 this가 가리키는 위치가 변하면서 페이지에 "hello, HongKillDong"이 출력 됨
+
+      // var greetings = [
+      //   {
+      //     greeting: "안녕",
+      //     name: "홍길동",
+      //   },
+      //   {
+      //     greeting: "Hello",
+      //     name: "HongKilDong",
+      //   },
+      // ];
+
+      // for(let i = 0; i < greetings.length; i++){
+      //   (function(i){
+      //     this.print = function(){
+      //       console.log(i + '. ' + this.greeting + ', ' + this.name);
+      //     }
+      //     this.print();
+      //   }).call(greetings[i], i);
+      // }
+
+      // apply() : call은 객체만 받는 반면, apply는 인자(매개변수)로 배열을 사용할 수 있음
+      // lang, name = [1, 2]
+      // function foo(lang, name){
+      //   if(lang == 'ko'){
+      //     console.log(this.koHello + name);
+      //   } else{
+      //     console.log(this.enHello + name);
+      //   }
+      // }
+
+      // var greeting = {
+      //   koHello: "안녕",
+      //   enHello: "Hello",
+      // }
+
+      // foo.call(greeting, "ko", "홍길동"); // 안녕홍길동
+      // foo.apply(greeting, ["en", "HongKilDong"]); // HelloHongKilDong
+
+      // bind() : bind() 함수는 인수로 주어진 객체를 this로 사용하는 함수를 반환한다.
+
+      function foo(lang, name) {
+        if (lang == "ko") {
+          console.log(this.koHello + name);
+        } else {
+          // console.log(this.enHello + name);
+          console.log(this.greeting.enHello + name); // var baz = foo.bind(this)를 사용했을 때, 값이 나오게 하려면 this.greeting.enHello로 찾아야함
+        }
+      }
+
+      var greeting = {
+        koHello: "안녕",
+        enHello: "Hello",
+      };
+
+      // var baz = foo.bind(greeting); 
+      // baz("en", "HongGilDong"); // HelloHongHilDong
+
+      var bar = foo.bind(greeting, "ko");
+      bar("홍길동"); // 안녕홍길동
+
+      var baz = foo.bind(this);  // this = window
+      baz("en", "HongGilDong");  // undefinedHongGilDong
+
+      
+
+      
+    </script>
+  </head>
+  <body></body>
+</html>
