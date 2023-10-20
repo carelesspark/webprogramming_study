@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom3</title>
+  </head>
+  <body>
+    <p class="special">I am a boy</p>
+    <p class="special">I am a girl</p>
+    <p id="result"></p>
+
+    <script>
+      // querySelector() : 입력한 선택자와 일치하는 문서 내의 첫 번째 요소 선택
+      // querySelectorAll() : 입력한 선택자와 일치하는 문서 내의 모든 요소 선택
+      let pArr = document.querySelectorAll("p.special"); // 배열로 반환
+      let p = document.getElementById("result");
+
+      p.innerHTML = pArr[0].innerHTML;
+    </script>
+  </body>
+</html>

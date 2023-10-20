@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom9</title>
+    <script>
+      // 요소의 내용변경
+      // 요소의 속성변경
+      // 요소의 스타일변경
+      function get() {
+        let val = document.getElementById("ex").innerHTML;
+        alert(val);
+      }
+
+      function set(v) {
+        document.getElementById("ex").innerHTML = v;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <div id="ex">여기는 div태그 입니다.</div>
+    <a href="#" onclick="get()">div 요소 내용</a>
+    <a href="#" onclick="set('저는 박종혁입니다.')">div 요소 내용 변경</a>
+    <br />
+    <img src="images/github.jpg" width="300" height="180" id="image" />
+    <script>
+      function changeimg(sel) {
+        let img = document.getElementById("image");
+        if (sel == 1) {
+          img.src = "images/tomato.jpg";
+        } else {
+          img.src = "images/github.jpg";
+        }
+      }
+    </script>
+    <button onclick="changeimg(1)">토마토</button>
+    <button onclick="changeimg(2)">깃허브</button> -->
+
+    <h1 id="title">여기는 강남 입니다.</h1>
+    <script>
+      // Object.style.속성명 = "값" => font-size --> fontSize
+      function styleChange() {
+        // let hObj = document.getElementById("title");
+        // hObj.style.color = "red";
+        // hObj.style.fontSize = "100px";
+        // hObj.style.visibility = "hidden"; // 글자 안보이게
+        // hObj.style.display = "none";    // 영역 삭제
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+          "skyblue";
+        document.getElementsByTagName("body")[0].style.color = "white";
+      }
+    </script>
+    <button onclick="styleChange()">색상변경</button>
+  </body>
+</html>

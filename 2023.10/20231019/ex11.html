@@ -65,7 +65,7 @@
       // document.write(KoGreeting.sayHello() + "<br>"); // 페이지에 "안녕, 홍길동" 출력
 
       // // call()을 호출하는 함수가 인자로 주어진 객체에 딸려 있는 객체 처럼 동작하게 된다.
-      // document.write(KoGreeting.sayHello.call(enGreeting)); // 페이지에 먼저 "안녕, 홍길동"출력하고
+      //  // 페이지에 먼document.write(KoGreeting.sayHello.call(enGreeting));저 "안녕, 홍길동"출력하고
       // // call(enGreeting)을 통해 this가 가리키는 위치가 변하면서 페이지에 "hello, HongKillDong"이 출력 됨
 
       // var greetings = [
@@ -108,28 +108,28 @@
 
       // bind() : bind() 함수는 인수로 주어진 객체를 this로 사용하는 함수를 반환한다.
 
-      function foo(lang, name) {
-        if (lang == "ko") {
-          console.log(this.koHello + name);
-        } else {
-          // console.log(this.enHello + name);
-          console.log(this.greeting.enHello + name); // var baz = foo.bind(this)를 사용했을 때, 값이 나오게 하려면 this.greeting.enHello로 찾아야함
-        }
-      }
+      // function foo(lang, name) {
+      //   if (lang == "ko") {
+      //     console.log(this.koHello + name);
+      //   } else {
+      //     // console.log(this.enHello + name);
+      //     console.log(this.greeting.enHello + name); // var baz = foo.bind(this)를 사용했을 때, 값이 나오게 하려면 this.greeting.enHello로 찾아야함
+      //   }
+      // }
 
-      var greeting = {
-        koHello: "안녕",
-        enHello: "Hello",
-      };
+      // var greeting = {
+      //   koHello: "안녕",
+      //   enHello: "Hello",
+      // };
 
-      // var baz = foo.bind(greeting); 
-      // baz("en", "HongGilDong"); // HelloHongHilDong
+      // // var baz = foo.bind(greeting); 
+      // // baz("en", "HongGilDong"); // HelloHongHilDong
 
-      var bar = foo.bind(greeting, "ko");
-      bar("홍길동"); // 안녕홍길동
+      // var bar = foo.bind(greeting, "ko");
+      // bar("홍길동"); // 안녕홍길동
 
-      var baz = foo.bind(this);  // this = window
-      baz("en", "HongGilDong");  // undefinedHongGilDong
+      // var baz = foo.bind(this);  // this = window
+      // baz("en", "HongGilDong");  // undefinedHongGilDong
 
       
 

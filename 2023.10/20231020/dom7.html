@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom7</title>
+    <script>
+      // function check(){
+      //    let check = document.getElementById("myCheckBox").checked; // 체크박스에 체크가 되어 있는지 true/false 반환
+      //    if (check == true) {
+      //     alert("체크 되어 있습니다.");
+      //    } else {
+      //     alert("체크 되어 있지 않습니다.");
+      //    }
+      // }
+
+      function check() {
+        // getElementsByName() : 태그의 이름 속성 값으로 요소 선택
+        let list = document.getElementsByName("color"); // 배열 형식으로 반환
+
+        let result = document.getElementById("result");
+        let flag = false;
+
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].checked) {
+            result.value = list[i].value;
+            flag = true;
+            break;
+          }
+        }
+
+        if (!flag) {
+          alert("선택해주세요.");
+          return; // 함수 종료
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <input type="checkbox" id="myCheckBox" checked="checked"/> 동의 합니다.
+    <button onclick="check()">확인</button> -->
+
+    <input type="radio" name="color" value="red" />red <br />
+    <input type="radio" name="color" value="green" />green <br />
+    <input type="radio" name="color" value="blue" />blue <br />
+
+    <button onclick="check()">확인</button>
+
+    <input type="text" id="result" />
+  </body>
+</html>
