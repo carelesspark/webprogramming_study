@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom4</title>
+    <script>
+      function process() {
+        let obj = document.getElementById("target").value;
+        alert(obj);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 폼태그 -->
+    <form>
+      <input type="text" id="target" name="text1" />
+      <input type="submit" value="제출" onclick="process()" />
+    </form>
+  </body>
+</html>

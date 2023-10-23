@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom5</title>
+    <script>
+      // 1. 폼태그의 id속성을 사용한 접근
+      // 2. 폼태그의 name속성을 사용한 계층적 구조의 접근 방식
+      function process() {
+        let result = document.myForm.text1.value;
+        alert(result);
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm">
+      <input type="text" name="text1" />
+      <input type="submit" value="제출" onclick="process()" />
+    </form>
+  </body>
+</html>
