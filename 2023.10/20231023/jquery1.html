@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      // 만약 body태그 위에서 script태그를 사용하려면
+      // $(document).ready(function(){ // js에서 사용한 window.onload = function(){} 과 같은 의미
+      //     $('#txt').css("background-color", "red");
+      // });
+
+      // $(function () { // (document).ready를 생략해도 됨
+      //   // js에서 사용한 window.onload = function(){} 과 같은 의미
+      //   $("#txt").css("background-color", "red");
+      //  });
+
+      // ------------------------------------------------------------------
+
+      // $(function () {
+      //   $("h1.title1").css("color", "red"); // h1 중에서도 class값이 title1인 요소에 css 적용
+      // });
+
+      $(function () {
+        // $("h2").prev().css("color", "red"); // h2 앞의 요소에 css 적용
+        // $("h2").next().css("color", "red"); // h2 뒤의 요소에 css 적용
+        // $("h2").parent().css("border", "1px solid black") // h2의 부모(div) 요소에 css 적용
+        // $("div > h1").css("border", "1px double orange") // div의 자식인 h1 요소에 css 적용
+        // $(".txt").siblings().css("color", "red"); // siblings -> 자신의 형제들(자신을 제외한) 요소에 css 적용
+        // $(".txt").prevAll().css("color", "red"); // 자신의 형들(형제 중 자신 보다 위에 있는) 요소에 css 적용
+        // $(".txt").nextAll().css("color", "red"); // 자신의 동생들(형제 중 자신 보다 아래에 있는) 요소에 css 적용
+        // --------------------------------------------------------------------------
+        // $(".txt1").closest("div").css("border", "1px double orange"); // 자신에게서 가장 가까운 div인 조상 요소에 css 적용
+        // -----------------------------------------------------------------------------
+        // $("#menu li:even").css("color", "red"); // menu라는 id값을 가진 ul의 후손인 li중 짝수인 요소(인덱스 번호가 짝수)에게만 css를 적용
+        // $("#menu li:odd").css("color", "blue"); // menu라는 id값을 가진 ul의 후손인 li중 홀수인 요소(인덱스 번호가 홀수)에게만 css를 적용
+        // 즉 위의 even, odd같은 함수는 인덱스 번호에 따른 짝,홀을 따지기에 적용을 짝,홀을 했지만 화면에는 홀,짝으로 속성을 적용한 것으로 보여진다.
+        // 1. 인덱스 번호로 구성하는 방법
+        // $("#menu li:eq(2)").css("color", "skyblue"); // eq(인덱스 번호)로 해당 요소의 css 적용
+        // $("#menu li:lt(2)").css("color", "pink"); // lt(인덱스 번호)로 해당 인덱스번호에 대해 미만인 요소들에게 css 적용
+        // $("#menu li:gt(2)").css("color", "gray"); // gt(인덱스 번호)로 해당 인덱스번호에 대해 초과인 요소들에게 css 적용
+        // 2. 작성 순서로 구성하는 방법이 있음
+        // $("#menu li:nth-child(2n+1)").css("color", "red"); // 아까와는 달리 작성 순서에 css를 적용, 해당 코드는 홀수에만 적용
+        // $("#menu li:nth-child(2n)").css("color", "blue"); // 아까와는 달리 작성 순서에 css를 적용, 해당 코드는 짝수에만 적용
+        // var arr = [1, 2, 3, 4, 5];
+        // $.each(arr, function(index, value){ // jquery에서 배열의 인덱스 번호와 값을 출력하는 코든
+        //     console.log("index : " + index + ", value : " + value);
+        // })
+        // var obj = [
+        //   {
+        //     name: "park",
+        //     age: "22",
+        //   },
+        //   {
+        //     name: "kim",
+        //     age: "40",
+        //   },
+        //   {
+        //     name: "lee",
+        //     age: "26",
+        //   },
+        // ];
+
+        // 첫 번째 방법
+        // $.each(obj, function (index, value) {
+        //   console.log(index);
+        //   console.log("name : " + value.name + ", age : " + value.age);
+        // });
+
+        // 두 번째 방법
+        // $(obj).each(function (index, value) {
+        //   console.log(index);
+        //   console.log("name : " + value.name + ", age : " + value.age);
+        // });
+
+        // span태그에 들어가 있는 값 가져오기
+        $("span").each(function(index, item){
+            var text = $(item).text();
+            console.log(text);
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div id="txt">배경색 적용하기</div>
+    <script>
+      // $(선택자).메소드(속성);
+      // $('#txt').css("background-color", "red");
+    </script> -->
+
+    <!-- <div>
+      <h1 class="title1">h1제목입니다.</h1>
+      <h2 class="txt">h2제목입니다.</h2>
+      <h3>h3제목입니다.</h3>
+      <h4 id="title2">h4제목입니다.</h4>
+    </div> -->
+
+    <!-- <div>
+      <div>
+        <p class="txt1">내용</p>
+      </div>
+    </div> -->
+
+    <!-- <ul id="menu">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+      <li>내용4</li>
+      <li>내용5</li>
+    </ul> -->
+
+    <span>1</span>
+    <span>10</span>
+    <span>100</span>
+    <span>1000</span>
+    <span>10000</span>
+  </body>
+</html>
