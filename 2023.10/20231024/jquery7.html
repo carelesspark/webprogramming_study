@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        // 이벤트 등록 형식
+        // 단독이벤트
+        // 그룹 이벤트
+        // 단독 이벤트
+        // $("이벤트 대상").이벤트함수(function(){
+        // });
+        // // 그룹 이벤트
+        // // 방법 1
+        // $("이벤트 대상").on("이벤트종류1 이벤트종류1", function(){
+        // });
+        // // 방법 2
+        // $("이벤트 대상").on({"이벤트종류1 이벤트종류1" : function(){
+        // }});
+        // // 방법 3
+        // $("이벤트 대상").on({
+        //     "이벤트종류1" : function(){},
+        //     "이벤트종류2" : function(){},
+        //     "이벤트종류3" : function(){}
+        // });
+
+        $(".btn1").click(function () {
+          $(".btn1").parent().next().css("color", "gray");
+        });
+
+        $(".btn2").on({
+          mouseover: function () {
+            $(".btn2").parent().next().css("color", "blue");
+          },
+          mouseout: function () {
+            $(".btn2").parent().next().css("color", "red");
+          },
+          click: function () {
+            $(".btn2").parent().next().css("color", "orange");
+          },
+        });
+
+        $(".btn1").off("click"); // 해당 요소 이벤트 제거
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">버튼</button>
+    </p>
+    <p>내용1</p>
+    <p>
+      <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+  </body>
+</html>
