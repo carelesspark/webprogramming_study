@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+    <script>
+      // JSON 형식
+      // {key: value, key: value}
+      // JSON.parse() : JSON 문자열을 javascript 객체로 변환 ( String -> Object )
+      // JSON.stringify() : javascript객체를 JSON형식의 문자열로 변환 ( Object -> String )
+
+      //   const str = `{
+      // "name" : "박종혁",
+      // "age" : 22,
+      // "married" : false,
+      // "family" : {"father" : "박00", "mother" : "강00"},
+      // "hobbies" : ["태권도", "비트박스"],
+      // "job" : null
+      //     }`;
+
+      //   const obj = JSON.parse(str); // string -> object 형식으로 변환
+      //   console.log(obj);
+      //   console.log(obj.name);
+      //   console.log(obj.age);
+      //   console.log(obj.married);
+      //   console.log(obj.family.father);
+      //   console.log(obj.family.mother);
+      //   console.log(obj.hobbies[0], obj.hobbies[1]);
+      //   console.log(obj.job);
+
+      const obj = {
+        name: "박종혁",
+        age: 22,
+        married: false,
+        family: { father: "박00", mother: "강00" },
+        hobbies: ["태권도", "비트박스"],
+        job: null,
+      };
+
+      const str = JSON.stringify(obj); // object -> string 형식으로 변환
+      console.log(str);
+
+      const str2 = JSON.stringify(obj, null, 2); // 조금 더 보기 편하게 여러 줄로 나누는 코드
+      console.log(str2);
+
+      console.log(str.name);
+
+    </script>
+  </head>
+  <body></body>
+</html>

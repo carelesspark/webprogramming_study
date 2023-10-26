@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Es6_1</title>
+    <script>
+      // let name = 'iphone', price = 40;
+
+      // let phone = {
+      //     name,
+      //     price,
+      //     info : function(){
+      //         console.log(this.name + " : " + this.price);
+      //     }
+      // }
+
+      // phone.info();
+
+      // 배열의 비구조화
+      //   let [a, b] = [3, 4];
+      //   console.log(`${a}, ${b}`);
+
+      //   [a, b] = [b, a]; // a와 b값을 swap
+
+      //   console.log(`${a}, ${b}`);
+
+      //   let numbers = [1, 2, 3];
+      //   let [a, b] = numbers; // 인덱스 값이 3개가 있지만, a, b만을 받는 배열변수를 만들 경우 앞에 있는 1, 2만 저장되어 들어감
+      //   console.log(`${a}, ${b}`);
+      //   let [c, , d] = numbers;
+      //   console.log(`${c}, ${d}`); // 중간 값을 비워둘 경우, 1 2 3 에서 중간 값인 2가 제외되고 각각 1, 3이 배열변수에 저장된다.
+
+      //   let numbers = [1, 2, 3];
+      //   let [a, ...b] = numbers;
+      //   console.log(`${a}`); // 인덱스의 첫 번째 값인 1이 저장
+      //   console.log(`${b}`); // ...b에는 1을 제외한 2~3 저장
+
+      //   let a = [1, 2, 3];
+      //   let b = [4, 5, 6];
+
+      //   let c = [...a, ...b]; // 배열변수 a와 배열변수 b를 합친 새로운 배열 변수 탄생
+      //   console.log(c);
+
+      // 객체의 비구조화
+      // let book = {
+      //   title: "javascript",
+      //   price: 20000,
+      // };
+
+      //   console.log(book.title); // console.log(book['title']); , 기존 버전의 객체 내 속성 값 불러오기
+
+      //    // 방법 1
+      //    let { title, price } = book;
+      //    console.log(title, price); // es6 버전에서의 속성 값 불러오기
+
+      // 방법 2
+      // let { title: ntitle, price: nprice } = book;
+      // console.log(ntitle);
+      // console.log(nprice);
+
+      // let obj = {
+      //   num: 5,
+      //   add1: function (a) {
+      //     console.log(this.num + a, this); // 8, obj
+      //   },
+
+      //   add2: (a) => {
+      //     // window 객체
+      //     console.log(this.num + a, this); // NaN, window
+      //   },
+      // };
+
+      // obj.add1(3);
+      // obj.add2(3);
+
+      // 클로저
+      // 중첩 함수
+      // 일급 객체 or 일급 함수 : 함수 자체가 변수에 값, 매개변수 값, 리턴 값 등으로 사용
+
+      // var global_name = "홍길동";
+
+      // function printName() {
+      //   var outer_name = "김철수";
+
+      //   function showName(){
+      //     var inner_name = "김영희";
+      //     console.log(global_name);
+      //     console.log(outer_name);
+      //     console.log(inner_name);
+      //   }
+
+      //   showName();
+      // }
+
+      // printName();
+
+      // var global_name = "홍길동";
+
+      // function makePrinter() {
+      //   var outer_name = "김철수";
+
+      //   function printName(){
+      //     var inner_name = "김영희";
+      //     console.log(global_name);
+      //     console.log(outer_name);
+      //     console.log(inner_name);
+      //   }
+
+      //   return printName;
+      // }
+
+      // var print = makePrinter();
+      // print();
+
+      // 클로저
+      // 함수 내부에 정의된 지역변수를 실행이 끝난 이후에도 사용할 수 있는 상태
+
+      // function makeGreeting(name) {
+      //   var greeting = "안녕";
+
+      //   return function () {
+      //     console.log(greeting + " " +  name);
+      //   };
+      // }
+
+      // var g1 = makeGreeting("박종혁"); // 자유 변수
+      // var g2 = makeGreeting("가나다"); // 자유 변수
+      // g1();
+      // g2();
+
+      // 즉시 실행 함수의 클로저
+      // var print = (function () {
+      //   var name = "홍길동";
+
+      //   return function(){
+      //     console.log(name);
+      //   }
+      // })();
+
+      // print();
+
+      let obj = {
+        num: 5,
+        add1: function (a) {
+          this.num += a;
+          console.log(this.num, this); // 8, obj
+
+          // 일반 형식의 클로저 함수
+          // function inner(){
+          //   this.num += a;
+          //   console.log(this.num, this); // NaN, window
+          // }
+
+          // inner();
+
+          // 화살표 형식의 클로저 함수
+          var inner = (a) => {
+            this.num += a;
+            console.log(this.num, this); // 11, obj
+          };
+
+          inner(a);
+        },
+      };
+
+      obj.add1(3);
+    </script>
+  </head>
+  <body></body>
+</html>
