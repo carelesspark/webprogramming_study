@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery10</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $(".menuWrap_1 a").on("click", function (e) {
+          e.preventDefault(); // 링크 금지
+
+          // $(".menuWrap_1 a").css("background-color", "red"); // 클릭했을 때 전체 a태그의 css가 바귐
+          $(this).css("background-color", "red"); // 클릭한 해당 a태그만 css가 바뀜
+        });
+
+        $(".menuWrap_2 a").on("click", function () {
+          var idx = $(".menuWrap_2 a").index(this); // 현재 선택 되어진 요소의 인덱스 번호를 idx 변수에 저장
+
+          $(".menuWrap_2 a").eq(idx).css("background-color", "skyblue"); // 저장된 인덱스 번호에 해당하는 요소에 css 적용
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul class="menuWrap_1">
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+    </ul>
+    <ul class="menuWrap_2">
+      <li><a href="#">메뉴4</a></li>
+      <li><a href="#">메뉴5</a></li>
+      <li><a href="#">메뉴6</a></li>
+    </ul>
+    <p class="idxNum"></p>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery12</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $(".btn1").on("click", function () {
+          $(".txt1").animate(
+            { marginLeft: "500px" },
+            2000,
+            "linear",
+            function () {
+              // 똑같은 구간을 동일한 속도로 : linear
+              alert("이동완료"); // 마찬가지로 콜백 생략 가능
+            }
+          ); // margin-left값을 줌으로써 움직이는 효과를 부여
+        });
+
+        $(".btn2").on("click", function () {
+          $(".txt2").animate({ marginLeft: "+=50px" }, 1000); // 누를 때 마다 marginLeft의 값이 50px만큼 누적되어 계속 계속 50px씩 움직인다
+        });
+      });
+    </script>
+    <style>
+      .txt1 {
+        background-color: aqua;
+      }
+
+      .txt2 {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p><button class="btn1">버튼1</button></p>
+    <span class="txt1">"500px" 이동</span>
+    <p><button class="btn2">버튼2</button></p>
+    <span class="txt2">"50px"씩 이동</span>
+  </body>
+</html>

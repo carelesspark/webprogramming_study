@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery11</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+      .content {
+        width: 400px;
+        background-color: antiquewhite;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(".btn1").on("click", function () {
+          $(".box").slideUp(1000, "linear", function () {
+            // 마지막에 들어가는 콜백함수는 생략 가능
+            $(".btn1").hide(); // 텍스트가 slideUp되고 버튼이 사라짐
+            $(".btn2").show();
+          });
+        });
+
+        $(".btn2").on("click", function () {
+          $(".box").fadeIn(1000, "swing", function () {
+            $(".btn2").hide(); // 사라졌던 텍스트가 fadeIn되고 버튼이 사라짐
+            $(".btn1").show();
+          });
+        });
+
+        $(".btn3").on("click", function () {
+          $(".box").slideToggle(1000, "swing"); // 텍스트가 생겼다가 사라졌다가
+        });
+
+        $(".btn4").on("click", function () {
+          $(".box").fadeTo("fast", 0.3); // 투명도 0.3
+        });
+
+        $(".btn5").on("click", function () {
+          $(".box").fadeTo("fast", 1); // 불투명
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">slidUp</button>
+      <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+      <button class="btn3">toggleSide</button>
+    </p>
+    <p>
+      <button class="btn4">fadeTo(0.3)</button>
+      <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+      <div class="content">
+        잉글랜드 프리미어리그(EPL) 9라운드 풀럼전에서 1골 1도움으로 활약한
+        손흥민(토트넘)이 'EPL 이주의 팀'에 이름을 올렸다. EPL 사무국은 25일(한국
+        시각) 공식 홈페이지를 통해 2023-2024시즌 정규 리그 9라운드 베스트 11을
+        발표했다. '레전드' 앨런 시어러가 선정하는 '이주의 팀'은 3-4-3
+        포메이션으로 구성됐고, 손흥민은 왼쪽 측면 풀백으로 이름을 올렸다. 최근
+        최전방 공격수로 활약 중인 손흥민이 왼쪽 측면 풀백에 배치된 점에 대해서는
+        다소 의문이 든다. 손흥민은 9라운드 풀럼전에서도 최전방 공격수로
+        출전했고, 왼쪽 측면은 히샤를리송과 데스티니 우도기가 맡았다. '이주의
+        팀'의 최전방 3개 자리는 크리스 우드(노팅엄 포레스트)와 무함마드
+        살라흐(리버풀), 울리 왓킨스(애스턴 빌라)가 차지했다. 9라운드에서 우드는
+        2골, 살라흐는 2골, 왓킨스는 1골 1도움으로 활약했다. 손흥민 역시 이들처럼
+        공격 포인트를 2개 기록했지만 최전방 자리에 오르지 못했다. 하지만
+        손흥민이 어느 위치에서든 뛸 수 있다고 판단했기 때문에 긍정적으로 바라볼
+        수도 있다. 올 시즌 손흥민이 '이주의 팀'에 선정된 건 이번이 3번째다. 앞서
+        손흥민은 해트트릭을 달성한 지난 4라운드 번리전, 멀티골을 터뜨린 6라운드
+        아스널전 이후 '이주의 팀'에 뽑힌 바 있다.
+      </div>
+    </div>
+  </body>
+</html>
