@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan base-package="polymorphism"></context:component-scan>
+	
+	
+	
+	<!-- 주석
+	SamsungTV samsung = new SamsungTV(sony, price)
+	sony는 객체이므로 ref로, price는 int타입이므로 value로
+	<bean id="tv" class="polymorphism.SamsungTV" scope="prototype">
+		 생성자 함수일 때, 
+		<constructor-arg ref="apple"></constructor-arg>
+		<constructor-arg value="270000"></constructor-arg>
+		
+		setter메소드 사용일 때, (name에는 set메소드에서 set만 뺀 이름을 넣음)
+		<property name="speaker" ref="apple"></property>
+		<property name="price" value="270000"></property>
+	</bean>
+
+	<bean id="sony" class="polymorphism.SonySpeaker" />
+	<bean id="apple" class="polymorphism.AppleSpeaker" />	
+		
+		주석-->
+
+</beans>
