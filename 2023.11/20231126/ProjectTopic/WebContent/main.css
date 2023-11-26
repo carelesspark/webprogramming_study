@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+#top {
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr 1fr 0.1fr;
+}
+
+#ul_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#main_content {
+	width: 700px;
+	height: 300px;
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+#content_box{
+	
+}
+
+#content_box_1{
+	padding-left:15px;
+	color: gray;
+	font-size:13px;
+	font-weight: bold; 
+	padding-bottom: 10px;
+}
+
+#content_box_2{
+	padding-left: 15px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-right: 15px;
+	border: medium dashed gray;
+	border-radius: 30px;
+	width: 700px;
+	height: 260px;
+}
+
+#content_box_2_1{
+	border-bottom: 1px solid #E2E2E2;
+	padding-bottom: 10px;
+	font-size: 15px;
+}
+
+#content_box_2_2{
+	padding-top: 10px;
+	border-bottom: 1px solid #E2E2E2;
+	padding-bottom: 10px;
+	font-size: 15px;
+}
+
+#content_box_a {
+	font-size: 13px;
+	padding-left:10px;
+	text-decoration: none;
+	color: #E2E2E2;
+}
+
+#user_info {
+	border: 1px solid black;
+	border: medium dashed gray;
+	border-radius: 30px;
+	margin-top: 70px;
+	margin-left: 150px;
+	width: 300px;
+	height:300px;
+}
+
+#user_box {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding-bottom: 50px;
+}
+
+#user_box_1{
+	padding-left: 20px;
+	padding-top: 70px;
+}
+
+#user_box_1_img {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+#user_box_2 {
+	padding-top: 80px;
+}
+
+#user_button {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-left:10px;
+}
+
+#user_button1 {
+	width: 130px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 70px;
+}
+
+#main1 {
+	place-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-bottom:50px;
+}
+
+#main2 {
+	place-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#carouselExampleDark{
+	width: 350px;
+	hegiht: 300px;
+}
+
+#div_middle_content{
+	width:350px;
+	height: 300px;
+}
+
+#div_right_content{
+	width:350px;
+	height: 300px;
+}
+
+
+#notice {
+	text-align: center;
+	color: gray;
+	font-size:13px;
+}
+#div_left {
+	margin-left:100px;
+	border: medium dashed gray;
+	border-radius: 30px;
+}
+
+#div_middle {
+	border: medium dashed gray;
+	border-radius: 30px;
+}
+
+#div_right {
+	border: medium dashed gray;
+	border-radius: 30px;
+}

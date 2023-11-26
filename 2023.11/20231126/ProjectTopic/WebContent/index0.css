@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+#top {
+	display: grid;
+	grid-template-columns: 5fr 1fr 1fr 0.1fr;
+}
+
+#carouselExampleDark {
+	width: 570px;
+	height: 560px;
+	border-style: groove;
+}
+
+#div {
+	place-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#div_left {
+	padding-top: 100px;
+	padding-left: 300px;
+}
+
+#div_right {
+	padding-top: 150px;
+	width: 870px;
+	hieght: 660px;
+	padding-right: 170px;
+}
+
+#login_top {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 400px;
+	height: 100px;
+	padding-right: 50px;
+}
+
+#login_middle {
+	padding-top: 30px;
+	width: 400px;
+	padding-left: 30px;
+}
+
+#login_text {
+	font-size: 25pt;
+	border-right: solid;
+	padding-left: 50px;
+	padding-top: 20px;
+	height: 80px;
+}
+
+#motto1_text {
+	padding-left: 10px;
+}
+
+#motto2_text {
+	padding-left: 50px;
+}
+
+#motto1 {
+	font-size: 17pt;
+	font-style: oblique;
+}
+
+#motto2 {
+	font-size: 17pt;
+	font-style: oblique;
+}
+
+#id_password {
+	width: 350px;
+}
+
+#login_bottom {
+	padding-top: 20px;
+	padding-left: 60px;
+}
+
+#find_or_login {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#b1 {
+	width: 200px;
+	font-size: 13px;
+}
+
+#b2 {
+	font-size: 13px;
+}
+
+#b3 {
+	font-size: 13px;
+	margin-left: 20px;
+}
+
+#footer {
+	position:absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 70px;
+}
