@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<!-- 어노테이션 방식(@Service, @Repository, @Autowired -->
+	<!-- <context:component-scan base-package="polymorphism"></context:component-scan> -->
+	<context:component-scan base-package="com.spring.practice"></context:component-scan>
+	
+	
+	<!-- bean태그를 사용해 데이터베이스 연동(어노테이션 방식x) -->
+	<bean id="userService" class="com.spring.practice.user.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	
+	<bean id="userDAO" class="com.spring.practice.user.impl.UserDAO"></bean>
+	
+	<bean id="log" class="com.spring.practice.common.Log4jAdvice"></bean>
+	
+	<bean id="around" class="com.spring.practice.common.AroundAdvice"></bean>
+
+	<!-- 공통관심사 등록 가능(aop 구성)
+	빈에 있는 log -> 안의 메소드인 printLogging을 원하는 장소에(expression 정의 값) 공통관심사로 적용(allPointcut)
+	aop:pointcut expression, id는 공통 관심사 대상, aop:aspect, aop:before는 대상에 정의할 공통 관심사 메소드 종류 
+	aop:before, after, around는 시점 관련 태그 -->
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* com.spring.practice..*Impl.*(..))" id="allPointcut"/> 
+		
+		<aop:pointcut expression="execution(* com.spring.practice..*Impl.get*(..))" id="getPointcut"/>
+		
+		
+		<aop:aspect ref="log">
+			<aop:before method="printLogging" pointcut-ref="allPointcut"/>
+		</aop:aspect>
+	
+		<!-- aop:pointcut expression="get메소드만" -->
+		<aop:aspect ref="log">
+			<aop:after method="printLogging" pointcut-ref="getPointcut"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="around">
+			<aop:around method="aroundLog" pointcut-ref="allPointcut"/>
+		</aop:aspect>
+	</aop:config>
+	
+	
+	<!-- JdbcTemplate 클래스(CRUD)
+	-update() => c, u, d
+	-query(), queryForInt(), queryForObject() => r
+	query는 보통 여러 개를 적용, for가 들어가면 하나만을 적용 -->
+	
+	<context:property-placeholder location="classpath:config/database.properties"/>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	
+	
+	<!-- ViewResolver -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/board/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	
+	
+	
+</beans>
