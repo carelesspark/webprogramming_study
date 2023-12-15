@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+	<insert id="insertBoard"> 
+		insert into board(seq, title, writer, content)
+		values((select nvl(max(seq),0)+1 from board), #{title}, #{writer}, #{content}) 
+	</insert>
+	
+	<update id="updateBoard">
+		update board
+		set title=#{title}, content=#{content}
+		where seq=#{seq}
+	</update>
+
+	<delete id="deleteBoard">
+		delete from board 
+		where seq = #{seq}
+	</delete>
+
+	<select id="getBoard" resultType="board">
+		select * 
+		from board 
+		where seq = #{seq}
+	</select>
+
+	<select id="getBoardList" resultType="board">
+		select * 
+		from board 
+		where title like '%'||#{searchKeyword}||'%' 
+		order by seq desc
+	</select>
+	
+	<!-- getTitle, getWriter, getContent -> title, writer, content(#안에 get 빼고 메소드명 작성) -->
+	<!-- select의 경우 resultType을 꼭 작성해야 함, resultType : 조회 결과 값을 저장하기 위한 데이터 타입(데이터 하나에 대한 타입 지정) -->
+	<!-- 그 외의 경우 parameterType을 작성해도 되고 생략해도 됌, paramterType : 전달받은 파라이터 데이터 타입 지정(선택적) -->
+	<!-- resultType, parameterType -> vo역할 -->
+</mapper>
