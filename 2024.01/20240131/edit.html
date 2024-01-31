@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Page</h1>
+    <hr>
+    <form method="post">
+        <fieldset>
+            <legend>EDIT DATA</legend>
+            <table>
+                <tr>
+                    <td><label>Id</label></td>
+                    <td><input type="text" name="id" value="<%=data[0].id%>" disabled></td>
+                </tr>
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" name="name" value="<%=data[0].name%>"></td>
+                </tr>
+                <tr>
+                    <td><label>Model Number</label></td>
+                    <td><input type="text" name="modelnumber" value="<%=data[0].modelnumber%>"></td>
+                </tr>
+                <tr>
+                    <td><label>Series</label></td>
+                    <td><input type="text" name="series" value="<%=data[0].series%>"></td>
+                </tr>
+
+            </table>
+            <input type="submit">
+            <button type="button" onclick="location.href='/'">돌아가기</button>
+        </fieldset>
+    </form>
+</body>
+</html>
