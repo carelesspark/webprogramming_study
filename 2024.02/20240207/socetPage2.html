@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        window.onload = function () {
+            var room = prompt('방 이름을 입력하세요.','');
+            var socket = io.connect();
+
+            socket.emit('join',room);
+
+            socket.on('message',function(data){
+                console.log(data);
+                //$('<p>' + data + '<p>').appendTo('body');
+                $('<li>' + data + '</li>').appendTo('ul');
+            });
+
+
+            document.getElementById('button').onclick = function(){
+                //alert('message');
+                //socket.emit('message','socket.io room message')
+
+                let nick = document.getElementById('nick').value;
+                let msg = document.getElementById('m').value;
+
+                socket.emit('message',{
+                    roomName:room,
+                    nick:nick,
+                    msg:msg
+                });
+
+                document.getElementById('area1').style.display = 'none';
+                document.getElementById('m').value = "";
+            };
+        };  
+    </script>
+
+</head>
+<body>
+    <!-- <button id="button">EMIT</button> -->
+
+    <ul id="message"></ul>
+    
+    <div id="area1">
+        <label>nickname : </label>
+        <input type="text" id="nick">
+    </div>
+
+    <div id="area2">
+        <label>message : </label>
+        <input type="text" id="m">
+        <button id="button">Send</button>
+    </div>
+</body>
+</html>
